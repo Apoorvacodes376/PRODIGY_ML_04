@@ -1,57 +1,137 @@
-# PRODIGY_ML_04
+#  Hand Gesture Recognition using SVM
 
-# Cat vs Dog Image Classification using SVM
+**Machine Learning Project | Prodigy Infotech Internship**
 
-## Overview
-This project implements a classical machine learning pipeline to classify images of cats and dogs using the Kaggle Dogs vs Cats dataset. The approach focuses on feature extraction and Support Vector Machines instead of deep learning models.
+##  Project Overview
 
-This project was completed as **Project 4** during the **Machine Learning Internship at Prodigy InfoTech**.
+This project implements a **Hand Gesture Recognition system** using a **Support Vector Machine (SVM)** classifier.
+The model is trained on grayscale hand gesture images from the **LeapGestRecog dataset** and classifies different gesture categories based on pixel-level features.
 
----
-
-## Objective
-- To apply classical ML techniques to an image classification problem
-- To extract meaningful visual features using HOG
-- To train and evaluate a Support Vector Machine classifier
+The project focuses on **traditional machine learning techniques** for image classification without using deep learning models.
 
 ---
 
-## Methodology
-- Image preprocessing: resizing and grayscale conversion
-- Feature extraction using Histogram of Oriented Gradients (HOG)
-- Classification using Linear Support Vector Machine (LinearSVC)
-- Performance evaluation using accuracy, precision, recall, and F1-score
+##  Dataset
+
+* **Dataset Name:** Leap Gesture Recognition (LeapGestRecog)
+* **Source:** Kaggle
+* **Path Used:**
+
+  ```
+  /kaggle/input/leapgestrecog/leapGestRecog
+  ```
+* **Structure:**
+
+  ```
+  leapGestRecog/
+  ├── 00/
+  │   ├── 01_palm/
+  │   ├── 02_l/
+  │   ├── ...
+  ├── 01/
+  ├── ...
+  ```
+
+Each subject folder contains multiple gesture classes.
 
 ---
 
-## Tech Stack
-- Python  
-- OpenCV  
-- scikit-image  
-- scikit-learn  
-- NumPy  
+##  Approach
+
+### 1. Image Loading & Preprocessing
+
+* Images loaded in **grayscale**
+* Resized to **64 × 64**
+* Flattened into 1D feature vectors
+* Limited to **200 images per gesture class** to balance the dataset
+
+### 2. Feature Representation
+
+* Pixel intensity values used as features
+* No deep learning or feature extractors (pure classical ML)
+
+### 3. Model Training
+
+* **Algorithm:** Support Vector Machine (SVM)
+* **Kernel:** Linear
+* **Train–Test Split:** 80% training, 20% testing
+
+### 4. Evaluation
+
+* Accuracy score
+* Detailed classification report (precision, recall, F1-score)
 
 ---
 
-## Dataset
-- Kaggle Dogs vs Cats Dataset  
-- Two classes: Cat and Dog  
-- Total images used: 25,000  
+##  Tech Stack
+
+* **Python**
+* **OpenCV**
+* **NumPy**
+* **Matplotlib**
+* **scikit-learn**
 
 ---
 
-## Results
-- Accuracy: ~72%
-- Balanced precision and recall for both classes
-- Efficient performance using a classical ML approach
+##  How to Run
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/gesture-recognition-svm.git
+
+# Open the notebook or script in Kaggle or local environment
+# Ensure dataset is placed correctly
+
+# Run the script
+python gesture_recognition.py
+```
 
 ---
 
-## Conclusion
-This project demonstrates the effectiveness of handcrafted feature extraction combined with SVMs for image classification, offering a computationally efficient alternative to deep learning models.
+##  Output
+
+* Displays total number of samples
+* Number of gesture classes
+* Model accuracy
+* Full classification report
+
+Example:
+
+```
+Accuracy: XX.XX%
+```
 
 ---
 
-## Acknowledgements
-- Prodigy InfoTech  
-- Kaggle Dataset Contributors
+##  Key Learnings
+
+* Image preprocessing using OpenCV
+* Handling multi-class image classification
+* Applying SVM to real-world image datasets
+* Dataset balancing for fair training
+* Performance evaluation using classification metrics
+
+---
+
+##  Future Enhancements
+
+* Use **HOG** or **SIFT** features
+* Experiment with **RBF kernel**
+* Compare with **CNN-based models**
+* Real-time gesture recognition using webcam
+
+---
+
+##  Acknowledgements
+
+* **Kaggle** – Leap Gesture Recognition Dataset
+* **Prodigy Infotech** – Machine Learning Internship
+
+---
+
+##  Contact
+
+Feel free to connect on LinkedIn or explore more ML projects on GitHub!
+
+---
+
